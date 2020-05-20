@@ -5,11 +5,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+
     return render_template("index.html")
 
 
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
+    print(fen)
     print(depth)
     print("Calculating...")
     engine = Engine(fen)
